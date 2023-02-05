@@ -1,0 +1,24 @@
+public static void printOddNumbers(int[] arr) {
+    int lenAns = 0;
+    int i = 0;
+    for (int k = 0; k < arr.length; k++) {
+        if (arr[k] % 2 != 0) {
+            lenAns ++;    //вычисляю количество нечетных элементов
+        }
+    }
+    int[] ans = new int[lenAns];  //создаю массив равный количеству нечетных элементов
+    int j = 0;
+    if (arr.length == 0 || lenAns == 0) {  //если исходящий массив пустой или там нет нечетных чисел то выводим пустой массив
+        System.out.println("{}");
+    }
+    for (i = 0; i < arr.length; i++) {  //набиваем новый массив нечетными элементами
+        if (Math.abs(arr[i] % 2) != 0) {
+            ans[j] = arr[i];
+            j++;
+        }
+    }
+    for (int s = 0; s < ans.length - 2; s++) {
+        System.out.print(", " + ans[s]);
+    }
+    System.out.println(ans[ans.length - 1]);
+}
